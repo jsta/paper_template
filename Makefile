@@ -1,6 +1,6 @@
 .PHONY: data figures tables manuscript all
 
-all: data figures tables manuscript
+all: data figures tables
 
 data: data/iris.csv
 
@@ -36,4 +36,4 @@ tables/01_iris_table.pdf: tables/01_iris_table.Rmd
 manuscript: manuscript/draft.pdf
 
 manuscript/draft.pdf: manuscript/draft.md
-	pandoc manuscript/draft.md -o manuscript/draft.pdf
+	cd manuscript && make all
