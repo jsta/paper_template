@@ -8,4 +8,4 @@ draft.pdf: draft.md
 	bibtex draft
 	xelatex draft.tex
 	xelatex draft.tex
-	rm draft.log draft.aux draft.out draft.blg # draft.bbl draft.tex
+	-rm draft.log draft.aux draft.out draft.blg # draft.bbl draft.tex
