@@ -33,7 +33,10 @@ manuscript/tables.pdf: tables/01_iris_table.pdf
 tables/01_iris_table.pdf: tables/01_iris_table.Rmd
 	Rscript -e "rmarkdown::render('$<', output_format = 'pdf_document')"
 
-manuscript: manuscript/draft.pdf
+manuscript: manuscript/draft.pdf index.html
 
 manuscript/draft.pdf: manuscript/draft.md
 	cd manuscript && make all
+
+index.html: manuscript/draft.md
+	pandoc $< -o index.html
